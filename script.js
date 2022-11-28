@@ -126,25 +126,6 @@ game.addEventListener('mousemove', function (event) {
 //     })
 // })
 
-// function switchLock() {
-//     if (cadenas.style.visibility = 'hidden') {
-//         cadenas.style.visibility = 'visible';
-//         console.log();
-//     } else {
-//         console.log();
-//         cadenas.style.visibility = 'hidden';
-//     }
-// }
-
-// function switchLock() {
-//     var x = document.getElementById("cadenas");
-//     if (x.style.display === "none") {
-//         x.style.display = "block";
-//     } else {
-//         x.style.display = "none";
-//     }
-// }
-
 
 function countdown(delay) {
     var timeleft = delay / 1000;
