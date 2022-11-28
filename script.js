@@ -2,6 +2,7 @@ const colorsChoice = document.querySelector("#colorsChoice")
 const game = document.querySelector('#game')
 const cursor = document.querySelector('#cursor')
 const media = document.querySelector('#media')
+const cadenas = document.querySelector('#cadenas')
 
 game.width = 1200
 game.height = 600
@@ -53,7 +54,7 @@ function createPixel(x, y, color) {
     ctx.fillRect(x, y, gridCellSize, gridCellSize)
 }
 
-const delay = 500; // anti-rebound for 500ms
+const delay = 3000; // anti-rebound for 500ms
 let lastExecution = 0;
 
 function checkTime_addPixel() {
@@ -80,6 +81,10 @@ function addPixelIntoGame() {
     const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
     pixelRef.set(pixel, { merge: true })
 
+    switchLock()
+    // setTimeout(delay)
+    switchLock()
+
 }
 cursor.addEventListener('click', function (event) {
     checkTime_addPixel()
@@ -97,7 +102,7 @@ function drawGrids(ctx, width, height, cellWidth, cellHeight) {
         ctx.moveTo(i * cellWidth, 0)
         ctx.lineTo(i * cellWidth, height)
     }
-    for (let i = 0; i < height; i++) {
+    for (let i = 0; i < height + 1; i++) {
         ctx.moveTo(0, i * cellHeight)
         ctx.lineTo(width, i * cellHeight)
     }
@@ -122,3 +127,10 @@ db.collection('pixels').onSnapshot(function (querySnapshot) {
     })
 })
 
+function switchLock() {
+    if (cadenas.style.visibility = 'hidden') {
+        cadenas.style.visibility = 'visible'
+    } else {
+        cadenas.style.visibility = 'visible'
+    }
+}

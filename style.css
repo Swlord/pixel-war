@@ -9,6 +9,7 @@ h1 {
   font-size: 4em;
   float: left;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 #titre {
@@ -27,9 +28,10 @@ h1 {
 
 #colorsChoice {
   top: 25px;
-  left: 500px;
+  left: 400px;
   position: fixed;
   width: 250px;
+  margin-right: 250px;
 }
 #colorsChoice div {
   height: 20px;
@@ -67,4 +69,13 @@ h1 {
   #colorsChoice div {
     display: block;
   }
+}
+#cadenas {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  color: gold;
+  margin: auto;
+  font-size: 50px;
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */
