@@ -78,8 +78,10 @@ function addPixelIntoGame() {
 
     // const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
     // pixelRef.set(pixel, { merge: true })
+    countdown(delay)
     cadenas.style.display = "flex";
     setTimeout(() => { cadenas.style.display = "none" }, delay);
+    document.getElementById("countdown").innerHTML = '3 secondes'
 
 
 }
@@ -143,3 +145,16 @@ game.addEventListener('mousemove', function (event) {
 //     }
 // }
 
+
+function countdown(delay) {
+    var timeleft = delay / 1000;
+    var downloadTimer = setInterval(function () {
+        if (timeleft <= 0) {
+            clearInterval(downloadTimer);
+            // document.getElementById("countdown").innerHTML = "Finished";
+        } else {
+            document.getElementById("countdown").innerHTML = timeleft - 1 + " secondes";
+        }
+        timeleft -= 1;
+    }, 1000);
+}
