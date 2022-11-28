@@ -18,16 +18,16 @@ const colorList = ["#FFFFFF",
 
 let CurrentColorChoice = colorList[9]
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAN8qsATSFFWYs3ztAfAlLDuj6PqWcpNvc",
-    authDomain: "pixels-war-ffe2d.firebaseapp.com",
-    projectId: "pixels-war-ffe2d",
-    storageBucket: "pixels-war-ffe2d.appspot.com",
-    messagingSenderId: "255969941905",
-    appId: "1:255969941905:web:ff1f098e1257e6359b6230"
-};
-firebase.initializeApp(firebaseConfig)
-const db = firebase.firestore()
+// const firebaseConfig = {
+//     apiKey: "AIzaSyAN8qsATSFFWYs3ztAfAlLDuj6PqWcpNvc",
+//     authDomain: "pixels-war-ffe2d.firebaseapp.com",
+//     projectId: "pixels-war-ffe2d",
+//     storageBucket: "pixels-war-ffe2d.appspot.com",
+//     messagingSenderId: "255969941905",
+//     appId: "1:255969941905:web:ff1f098e1257e6359b6230"
+// };
+// firebase.initializeApp(firebaseConfig)
+// const db = firebase.firestore()
 
 colorList.forEach(color => {
     const colorItem = document.createElement('div')
@@ -71,19 +71,16 @@ function addPixelIntoGame() {
 
     createPixel(x, y, CurrentColorChoice)
 
+    // const pixel = {
+    //     x, y,
+    //     color: CurrentColorChoice
+    // }
 
+    // const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
+    // pixelRef.set(pixel, { merge: true })
+    cadenas.style.display = "block";
+    setTimeout(() => { cadenas.style.display = "none" }, delay);
 
-    const pixel = {
-        x, y,
-        color: CurrentColorChoice
-    }
-
-    const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
-    pixelRef.set(pixel, { merge: true })
-
-    switchLock()
-    // setTimeout(delay)
-    switchLock()
 
 }
 cursor.addEventListener('click', function (event) {
@@ -118,19 +115,31 @@ game.addEventListener('mousemove', function (event) {
     cursor.style.top = Math.floor(cursorTop / gridCellSize) * gridCellSize + "px"
 })
 
-db.collection('pixels').onSnapshot(function (querySnapshot) {
-    querySnapshot.docChanges().forEach(function (change) {
-        console.log(change.doc.data())
-        const { x, y, color } = change.doc.data()
+// db.collection('pixels').onSnapshot(function (querySnapshot) {
+//     querySnapshot.docChanges().forEach(function (change) {
+//         console.log(change.doc.data())
+//         const { x, y, color } = change.doc.data()
 
-        createPixel(x, y, color)
-    })
-})
+//         createPixel(x, y, color)
+//     })
+// })
 
-function switchLock() {
-    if (cadenas.style.visibility = 'hidden') {
-        cadenas.style.visibility = 'visible'
-    } else {
-        cadenas.style.visibility = 'visible'
-    }
-}
+// function switchLock() {
+//     if (cadenas.style.visibility = 'hidden') {
+//         cadenas.style.visibility = 'visible';
+//         console.log();
+//     } else {
+//         console.log();
+//         cadenas.style.visibility = 'hidden';
+//     }
+// }
+
+// function switchLock() {
+//     var x = document.getElementById("cadenas");
+//     if (x.style.display === "none") {
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// }
+
