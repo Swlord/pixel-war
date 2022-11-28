@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-
 body {
   margin: 0;
 }
@@ -22,7 +21,6 @@ h1 {
   right: 50px;
   top: 100px;
 }
-
 #colorsChoice div {
   background-color: #ff5a5f;
   height: 20px;
@@ -38,7 +36,6 @@ h1 {
   color: #fff;
   border-color: #aaaaaa;
 }
-
 #colorsChoice div:hover {
   border-color: #000000;
 }
@@ -53,15 +50,12 @@ h1 {
   cursor: none;
 }
 
-/*# sourceMappingURL=style.css.map */
-
-@media(max-width: 700px) {
+@media (max-width: 600px) {
   #colorsChoice div {
     display: inline-block;
   }
-
   #colorsChoice {
     left: 20px;
     top: 120px;
   }
-}
+}/*# sourceMappingURL=style.css.map */
