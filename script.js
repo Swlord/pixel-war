@@ -78,7 +78,7 @@ function addPixelIntoGame() {
 
     // const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
     // pixelRef.set(pixel, { merge: true })
-    cadenas.style.display = "block";
+    cadenas.style.display = "flex";
     setTimeout(() => { cadenas.style.display = "none" }, delay);
 
 

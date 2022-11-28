@@ -11,6 +11,7 @@ h1 {
     float: left;
     overflow: hidden;
     white-space: nowrap;
+    padding-left: 20px;
 }
 
 #titre {
@@ -83,8 +84,11 @@ h1 {
 
 #cadenas {
     position: fixed;
-    left: 50%;
+    width: 100%;
+    // left: 50%;
+    top: 30%;
     color: gold;
-    font-size: 50px;
+    font-size: 100px;
     display: none;
+    justify-content: space-evenly;
 }
