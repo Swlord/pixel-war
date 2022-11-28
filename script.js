@@ -69,6 +69,7 @@ function addPixelIntoGame() {
 
     const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
     pixelRef.set(pixel, { merge: true })
+
 }
 cursor.addEventListener('click', function (event) {
     addPixelIntoGame()

@@ -4,12 +4,11 @@ body {
 }
 
 h1 {
-  color: #ff5a5f;
+  color: #000000;
   font-family: "VT323", monospace;
   font-size: 4em;
-  position: -webkit-sticky;
-  position: sticky;
-  left: 0;
+  text-align: center;
+  width: 100%;
 }
 
 #game {
@@ -19,16 +18,17 @@ h1 {
 }
 
 #colorsChoice {
+  left: 20px;
+  top: 760px;
   position: fixed;
-  right: 50px;
-  top: 100px;
+  width: 250px;
 }
 #colorsChoice div {
-  background-color: #ff5a5f;
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  display: inline-block;
+  margin-left: 10px;
   border: 1px solid transparent;
   transition: all 0.3s;
   cursor: pointer;
@@ -48,23 +48,4 @@ h1 {
   height: 10px;
   background-color: transparent;
   border: #000000 solid;
-}
-
-@media (max-width: 600px) {
-  #colorsChoice div {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  #colorsChoice {
-    width: 250px;
-    margin-bottom: 0px;
-    margin-left: 10px;
-    position: -webkit-sticky;
-    position: sticky;
-    margin-top: 20px;
-    left: 0;
-  }
-  #h1 {
-    text-align: center;
-  }
 }/*# sourceMappingURL=style.css.map */
