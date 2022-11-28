@@ -52,3 +52,24 @@ h1 {
     border: #000000 solid;
     cursor: none;
 }
+
+// // Format mobile
+
+// $breakpoints: (
+//     mobile: 599px
+// );
+
+// @mixin mobile-only {
+//     @media screen and (max-width: map-get($breakpoints, mobile)) {
+//         @content;
+//     }
+// }
+
+// .proj-grid {
+//     display: grid;
+//     grid-template-columns: repeat(3, 1fr);
+
+//     @include mobile-only {
+//         grid-template-columns: 1fr;
+//     }
+// }

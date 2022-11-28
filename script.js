@@ -1,6 +1,8 @@
 const colorsChoice = document.querySelector("#colorsChoice")
 const game = document.querySelector('#game')
 const cursor = document.querySelector('#cursor')
+const media = document.querySelector('#media')
+
 game.width = 1200
 game.height = 600
 const gridCellSize = 10
@@ -29,6 +31,8 @@ const db = firebase.firestore()
 colorList.forEach(color => {
     const colorItem = document.createElement('div')
     colorItem.style.backgroundColor = color
+    // colorItem.style.display = "inline-block"
+    // colorItem.style.margin = "20px"
 
     colorItem.addEventListener('click', () => {
         CurrentColorChoice = color
