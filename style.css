@@ -7,6 +7,9 @@ h1 {
   color: #ff5a5f;
   font-family: "VT323", monospace;
   font-size: 4em;
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
 }
 
 #game {
@@ -55,10 +58,13 @@ h1 {
   #colorsChoice {
     width: 250px;
     margin-bottom: 0px;
-    margin-right: 10px;
+    margin-left: 10px;
     position: -webkit-sticky;
     position: sticky;
     margin-top: 20px;
     left: 0;
+  }
+  #h1 {
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */
