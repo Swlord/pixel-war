@@ -95,8 +95,8 @@ function drawGrids(ctx, width, height, cellWidth, cellHeight) {
 drawGrids(gridCtx, game.width, game.height, gridCellSize, gridCellSize)
 
 game.addEventListener('mousemove', function (event) {
-    const cursorLeft = event.clientX - (cursor.offsetWidth / 2)
-    const cursorTop = event.clientY - (cursor.offsetHeight / 2)
+    const cursorLeft = event.clientX - (cursor.offsetWidth / 2) + 1
+    const cursorTop = event.clientY - (cursor.offsetHeight / 2) + 1
 
     cursor.style.left = Math.floor(cursorLeft / gridCellSize) * gridCellSize + "px"
     cursor.style.top = Math.floor(cursorTop / gridCellSize) * gridCellSize + "px"
