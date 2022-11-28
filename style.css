@@ -58,5 +58,7 @@ h1 {
     margin-right: 10px;
     position: -webkit-sticky;
     position: sticky;
+    margin-top: 20px;
+    left: 0;
   }
 }/*# sourceMappingURL=style.css.map */
