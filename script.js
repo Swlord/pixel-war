@@ -18,16 +18,16 @@ const colorList = ["#FFFFFF",
 
 let CurrentColorChoice = colorList[9]
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyAN8qsATSFFWYs3ztAfAlLDuj6PqWcpNvc",
-//     authDomain: "pixels-war-ffe2d.firebaseapp.com",
-//     projectId: "pixels-war-ffe2d",
-//     storageBucket: "pixels-war-ffe2d.appspot.com",
-//     messagingSenderId: "255969941905",
-//     appId: "1:255969941905:web:ff1f098e1257e6359b6230"
-// };
-// firebase.initializeApp(firebaseConfig)
-// const db = firebase.firestore()
+const firebaseConfig = {
+    apiKey: "AIzaSyAN8qsATSFFWYs3ztAfAlLDuj6PqWcpNvc",
+    authDomain: "pixels-war-ffe2d.firebaseapp.com",
+    projectId: "pixels-war-ffe2d",
+    storageBucket: "pixels-war-ffe2d.appspot.com",
+    messagingSenderId: "255969941905",
+    appId: "1:255969941905:web:ff1f098e1257e6359b6230"
+};
+firebase.initializeApp(firebaseConfig)
+const db = firebase.firestore()
 
 colorList.forEach(color => {
     const colorItem = document.createElement('div')
@@ -71,13 +71,13 @@ function addPixelIntoGame() {
 
     createPixel(x, y, CurrentColorChoice)
 
-    // const pixel = {
-    //     x, y,
-    //     color: CurrentColorChoice
-    // }
+    const pixel = {
+        x, y,
+        color: CurrentColorChoice
+    }
 
-    // const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
-    // pixelRef.set(pixel, { merge: true })
+    const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
+    pixelRef.set(pixel, { merge: true })
     countdown(delay)
     cadenas.style.display = "flex";
     setTimeout(() => { cadenas.style.display = "none" }, delay);
@@ -117,14 +117,14 @@ game.addEventListener('mousemove', function (event) {
     cursor.style.top = Math.floor(cursorTop / gridCellSize) * gridCellSize + "px"
 })
 
-// db.collection('pixels').onSnapshot(function (querySnapshot) {
-//     querySnapshot.docChanges().forEach(function (change) {
-//         console.log(change.doc.data())
-//         const { x, y, color } = change.doc.data()
+db.collection('pixels').onSnapshot(function (querySnapshot) {
+    querySnapshot.docChanges().forEach(function (change) {
+        console.log(change.doc.data())
+        const { x, y, color } = change.doc.data()
 
-//         createPixel(x, y, color)
-//     })
-// })
+        createPixel(x, y, color)
+    })
+})
 
 
 function countdown(delay) {
