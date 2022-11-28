@@ -37,11 +37,11 @@ colorList.forEach(color => {
     colorItem.addEventListener('click', () => {
         CurrentColorChoice = color
 
-        colorItem.innerHTML = `<i class="fa-solid fa-check"></i>`
+        // colorItem.innerHTML = `<i class="fa-solid fa-check"></i>`
 
-        setTimeout(() => {
-            colorItem.innerHTML = ''
-        }, 1000)
+        // setTimeout(() => {
+        //     colorItem.innerHTML = ''
+        // }, 1000)
     })
 
     colorsChoice.appendChild(colorItem)
