@@ -7,8 +7,16 @@ h1 {
   color: #000000;
   font-family: "VT323", monospace;
   font-size: 4em;
-  text-align: center;
-  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+#titre {
+  font-family: "VT323", monospace;
+  font-size: 4em;
+  white-space: nowrap;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 #game {
@@ -18,8 +26,8 @@ h1 {
 }
 
 #colorsChoice {
-  top: 0px;
-  left: 350px;
+  top: 25px;
+  left: 500px;
   position: fixed;
   width: 250px;
 }
@@ -59,7 +67,4 @@ h1 {
   #colorsChoice div {
     display: block;
   }
-}
-#game {
-  position: absolute;
 }/*# sourceMappingURL=style.css.map */
