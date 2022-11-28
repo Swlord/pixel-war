@@ -18,7 +18,7 @@ h1 {
 }
 
 #colorsChoice {
-  top: 80px;
+  top: 0px;
   left: 350px;
   position: fixed;
   width: 250px;
@@ -59,4 +59,7 @@ h1 {
   #colorsChoice div {
     display: block;
   }
+}
+#game {
+  position: absolute;
 }/*# sourceMappingURL=style.css.map */

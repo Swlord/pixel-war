@@ -53,6 +53,16 @@ function createPixel(x, y, color) {
     ctx.fillRect(x, y, gridCellSize, gridCellSize)
 }
 
+const delay = 500; // anti-rebound for 500ms
+let lastExecution = 0;
+
+function checkTime_addPixel() {
+    if ((lastExecution + delay) < Date.now()) {
+        addPixelIntoGame()
+        lastExecution = Date.now()
+    }
+}
+
 
 function addPixelIntoGame() {
     const x = cursor.offsetLeft
@@ -72,10 +82,10 @@ function addPixelIntoGame() {
 
 }
 cursor.addEventListener('click', function (event) {
-    addPixelIntoGame()
+    checkTime_addPixel()
 })
 game.addEventListener('click', function () {
-    addPixelIntoGame()
+    checkTime_addPixel()
 })
 
 
@@ -111,3 +121,4 @@ db.collection('pixels').onSnapshot(function (querySnapshot) {
         createPixel(x, y, color)
     })
 })
+
