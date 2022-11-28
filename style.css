@@ -59,4 +59,9 @@ h1 {
   #colorsChoice div {
     display: inline-block;
   }
+
+  #colorsChoice {
+    left: 20px;
+    top: 120px;
+  }
 }
