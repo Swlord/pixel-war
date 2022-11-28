@@ -19,9 +19,10 @@ h1 {
 
 #colorsChoice {
   left: 20px;
-  top: 760px;
+  top: 830px;
   position: fixed;
   width: 250px;
+  left: 250px;
 }
 #colorsChoice div {
   height: 20px;
@@ -48,4 +49,15 @@ h1 {
   height: 10px;
   background-color: transparent;
   border: #000000 solid;
+}
+
+@media (min-width: 700px) {
+  #colorsChoice {
+    top: 160px;
+    left: 1200px;
+    position: absolute;
+  }
+  #colorsChoice div {
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */

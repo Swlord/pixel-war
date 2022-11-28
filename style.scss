@@ -21,9 +21,10 @@ h1 {
 
 #colorsChoice {
     left: 20px;
-    top: 760px;
+    top: 830px;
     position: fixed;
     width: 250px;
+    left: 250px;
 
     div {
         // background-color: #ff5a5f;
@@ -56,4 +57,16 @@ h1 {
     background-color: transparent;
     border: #000000 solid;
     // cursor: none;
+}
+
+@media(min-width: 700px) {
+    #colorsChoice {
+        top: 160px;
+        left: 1200px;
+        position: absolute;
+    }
+
+    #colorsChoice div {
+        display: block;
+    }
 }
