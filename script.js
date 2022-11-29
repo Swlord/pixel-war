@@ -78,6 +78,7 @@ function addPixelIntoGame() {
 
     const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
     pixelRef.set(pixel, { merge: true })
+
     countdown(delay)
     cadenas.style.display = "flex";
     setTimeout(() => { cadenas.style.display = "none" }, delay);
@@ -117,14 +118,16 @@ game.addEventListener('mousemove', function (event) {
     cursor.style.top = Math.floor(cursorTop / gridCellSize) * gridCellSize + "px"
 })
 
-db.collection('pixels').onSnapshot(function (querySnapshot) {
-    querySnapshot.docChanges().forEach(function (change) {
-        console.log(change.doc.data())
-        const { x, y, color } = change.doc.data()
+// db.collection('pixels').onSnapshot(function (querySnapshot) {
+//     querySnapshot.docChanges().forEach(function (change) {
+//         console.log(change.doc.data())
+//         const { x, y, color } = change.doc.data()
 
-        createPixel(x, y, color)
-    })
-})
+//         createPixel(x, y, color)
+//     })
+// })
+
+
 
 
 function countdown(delay) {
