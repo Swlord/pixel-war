@@ -129,7 +129,6 @@ game.addEventListener('mousemove', function (event) {
 
 
 
-
 function countdown(delay) {
     var timeleft = delay / 1000;
     var downloadTimer = setInterval(function () {
@@ -142,3 +141,25 @@ function countdown(delay) {
         timeleft -= 1;
     }, 1000);
 }
+
+
+
+// db.collection('pixels').onSnapshot(function (querySnapshot) {
+//     querySnapshot.docChanges().forEach(function (change) {
+//         console.log(change.doc.data())
+
+
+//         const { x, y, color } = change.doc.data()
+//         createPixel(x, y, color)
+//     })
+// })
+
+db.collection('pixels').get().then(function (querySnapshot) {
+    querySnapshot.docChanges().forEach(function (change) {
+        console.log(change.doc.data())
+
+
+        const { x, y, color } = change.doc.data()
+        createPixel(x, y, color)
+    })
+})
