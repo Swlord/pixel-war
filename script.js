@@ -54,7 +54,7 @@ function createPixel(x, y, color) {
     ctx.fillRect(x, y, gridCellSize, gridCellSize)
 }
 
-const delay = 3000; // 3s
+const delay = 0; // 3s
 let lastExecution = 0;
 
 function checkTime_addPixel() {
