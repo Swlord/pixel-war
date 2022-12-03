@@ -71,13 +71,12 @@ function addPixelIntoGame() {
 
     createPixel(x, y, CurrentColorChoice)
 
-    const pixel = {
-        x, y,
-        color: CurrentColorChoice
-    }
 
-    const pixelRef = db.collection('pixels').doc(`${pixel.x}-${pixel.y}`)
-    pixelRef.set(pixel, { merge: true })
+    const n = CTN(x, y)
+    db.collection("pixels").doc("pixels").update({
+        [n]: CurrentColorChoice,
+    })
+
 
     countdown(delay)
     cadenas.style.display = "flex";
@@ -118,14 +117,6 @@ game.addEventListener('mousemove', function (event) {
     cursor.style.top = Math.floor(cursorTop / gridCellSize) * gridCellSize + "px"
 })
 
-// db.collection('pixels').onSnapshot(function (querySnapshot) {
-//     querySnapshot.docChanges().forEach(function (change) {
-//         console.log(change.doc.data())
-//         const { x, y, color } = change.doc.data()
-
-//         createPixel(x, y, color)
-//     })
-// })
 
 
 
@@ -143,23 +134,29 @@ function countdown(delay) {
 }
 
 
+function CTN(x, y) {
+    return x / 10 + (y / 10) * 120
+}
 
-// db.collection('pixels').onSnapshot(function (querySnapshot) {
-//     querySnapshot.docChanges().forEach(function (change) {
-//         console.log(change.doc.data())
+function NTC(n) {
+    const y = Math.floor(n / 120)
+    const x = n - 120 * y
+    return [10 * x, 10 * y]
+}
 
-
-//         const { x, y, color } = change.doc.data()
-//         createPixel(x, y, color)
-//     })
-// })
 
 db.collection('pixels').get().then(function (querySnapshot) {
     querySnapshot.docChanges().forEach(function (change) {
-        console.log(change.doc.data())
+        console.log(typeof change.doc.data())
+        for (const [n, color] of Object.entries(change.doc.data())) {
+            // console.log(n)
+            // console.log(color)
+            console.log(n)
 
+            const [x, y] = NTC(Number(n))
+            console.log(x, y)
 
-        const { x, y, color } = change.doc.data()
-        createPixel(x, y, color)
+            createPixel(x, y, color)
+        }
     })
 })
