@@ -19,12 +19,12 @@ const colorList = ["#FFFFFF",
 let CurrentColorChoice = colorList[9]
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAN8qsATSFFWYs3ztAfAlLDuj6PqWcpNvc",
-    authDomain: "pixels-war-ffe2d.firebaseapp.com",
-    projectId: "pixels-war-ffe2d",
-    storageBucket: "pixels-war-ffe2d.appspot.com",
-    messagingSenderId: "255969941905",
-    appId: "1:255969941905:web:ff1f098e1257e6359b6230"
+    apiKey: "AIzaSyD1IEp3iUqIQfocAYIfdSjWhEoKveK4d1s",
+    authDomain: "pixelwar-ea6c7.firebaseapp.com",
+    projectId: "pixelwar-ea6c7",
+    storageBucket: "pixelwar-ea6c7.appspot.com",
+    messagingSenderId: "745550461521",
+    appId: "1:745550461521:web:c567275ceec7a9fc175670"
 };
 firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
@@ -54,7 +54,7 @@ function createPixel(x, y, color) {
     ctx.fillRect(x, y, gridCellSize, gridCellSize)
 }
 
-const delay = 0; // 3s
+const delay = 10000; // 10s
 let lastExecution = 0;
 
 function checkTime_addPixel() {
@@ -81,7 +81,7 @@ function addPixelIntoGame() {
     countdown(delay)
     cadenas.style.display = "flex";
     setTimeout(() => { cadenas.style.display = "none" }, delay);
-    document.getElementById("countdown").innerHTML = '3 secondes'
+    document.getElementById("countdown").innerHTML = '10 secondes'
 
 
 }
@@ -151,12 +151,19 @@ db.collection('pixels').get().then(function (querySnapshot) {
         for (const [n, color] of Object.entries(change.doc.data())) {
             // console.log(n)
             // console.log(color)
-            console.log(n)
+            // console.log(n)
 
             const [x, y] = NTC(Number(n))
-            console.log(x, y)
+            // console.log(x, y)
 
             createPixel(x, y, color)
         }
     })
 })
+
+
+// for (let i = 3000; i < 4000; i++) {
+//     db.collection("pixels").doc("pixels").update({
+//         [i]: "#B39DDB",
+//     })
+// }
